@@ -4,7 +4,7 @@ Donate link: http://www.chatme.im
 Tags: chat, jabber, jappix, mini, xmpp, status, widget
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 0.1 beta 1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,10 +47,16 @@ An answer to that question.
 
 == Changelog ==
 
+= 1.0  =
+* Stable version
+
 = 1.0 beta 1 =
 * First public version
 
 == Upgrade Notice ==
+
+= 1.0  =
+* Stable version
 
 = 1.0 beta 1 =
 * First public version
