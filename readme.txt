@@ -28,6 +28,8 @@ Hand-crafted, and made with love, in [Rosolina](http://rosolina.me), Italy.
 
 Based on [Jappix](https://project.jappix.com/) and [Jappix Mini](https://mini.jappix.com/).
 
+For Every request visit our [Forum](http://chatme.im/forums)
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
