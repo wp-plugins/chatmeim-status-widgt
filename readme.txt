@@ -2,9 +2,9 @@
 Contributors: camaran
 Donate link: http://www.chatme.im
 Tags: chat, jabber, jappix, mini, xmpp, status, widget
-Requires at least: 3.3
-Tested up to: 3.6
-Stable tag: 1.0.3
+Requires at least: 3.8
+Tested up to: 3.8
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ An answer to that question.
 
 == Changelog ==
 
+= 2.0  =
+* New Prosody Server Compatibility
+
 = 1.0.3  =
 * API link
 
@@ -62,6 +65,9 @@ An answer to that question.
 * First public version
 
 == Upgrade Notice ==
+
+= 2.0  =
+* New Prosody Server Compatibility
 
 = 1.0.3  =
 * API link
