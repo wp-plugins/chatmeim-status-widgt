@@ -4,7 +4,7 @@ Plugin Name: ChatMe Status Widget
 Plugin URI: http://chatme.im
 Description: Displays the ChatMe User Status.
 Author: camaran 
-Version: 2.0.2
+Version: 2.1.0
 Author URI: http://chatme.im
 */
 class chatme_status_Widget extends WP_Widget {
@@ -33,6 +33,7 @@ class chatme_status_Widget extends WP_Widget {
 
 		//	Get the title of the widget and the specified width of the image
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
+		$hosted = empty($instance['hosted']) ? ' ' : apply_filters('widget_hosted', $instance['hosted']);
 			
 		//	Outputs the widget in its standard ul li format.
 		echo $before_widget;
@@ -44,7 +45,11 @@ class chatme_status_Widget extends WP_Widget {
 		//	Let's display the image(s)
 
 			//	Outputs the image
-			echo '  <li>'. $title .'@chatme.im <img src="http://api.chatme.im/status/'.$title.'@chatme.im" alt="ChatMe Status" /></li>';
+			if ($hosted == "1") { 
+				echo '  <li>'. $title .' <img src="http://api.webchat.domains/status/'.$title.'" alt="ChatMe Status" /></li>';
+			} else {
+				echo '  <li>'. $title .' <img src="http://api.chatme.im/status/'.$title.'" alt="ChatMe Status" /></li>'; 
+				}
 		
 		echo '</ul>';
 		echo $after_widget;
@@ -58,7 +63,7 @@ class chatme_status_Widget extends WP_Widget {
 		
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		//$instance['width'] = strip_tags($new_instance['width']);
+		$instance['hosted'] = strip_tags($new_instance['hosted']);
 
 		return $instance;
 		
@@ -70,13 +75,12 @@ class chatme_status_Widget extends WP_Widget {
 	function form($instance) {
 
 		//	Assigns values
-		//$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'width' => '' ) );
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'hosted' => '0' ) );
 		$title = strip_tags($instance['title']);
-		//$width = strip_tags($instance['width']);
+		$hosted = strip_tags($instance['hosted']);
 		?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('ChatMe Username'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" />@chatme.im</label></p>
-			<!-- <p><label for="<?php echo $this->get_field_id('width'); ?>"><?php echo __('Width'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo attribute_escape($width); ?>" /></label></p> -->
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('ChatMe Username with domain'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+			<p><label for="<?php echo $this->get_field_id('hosted'); ?>"><?php echo __('Hosted Domain?'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('hosted'); ?>" name="<?php echo $this->get_field_name('hosted'); ?>" type="checkbox" <?php if ($hosted == "1") { echo 'checked=""'; }?> value="1" /></label></p>
 		<?php
 		
 	}
