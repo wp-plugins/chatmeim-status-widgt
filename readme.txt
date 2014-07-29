@@ -1,18 +1,18 @@
-=== Chatme.im Status Widget ===
+=== ChatMe Status Widget ===
 Contributors: camaran
 Donate link: http://www.chatme.im
-Tags: chat, jabber, jappix, mini, xmpp, status, widget
+Tags: chat, jabber, jappix, mini, xmpp, status, widget, chatme
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin add a widget to show ChatMe.im user status 
+This plugin add a widget to show ChatMe user status 
 
 == Description ==
 
-This plugin add a widget to show ChatMe.im user status
+This plugin add a widget to show ChatMe user status
 
 For more information, check out [chatme.im](http://chatme.im/) and [webchat](https://webchat.chatme.im/).
 
@@ -49,6 +49,9 @@ An answer to that question.
 
 == Changelog ==
 
+= 2.1.1 =
+* Renamed
+
 = 2.1.0  =
 * Hosted Domain Support
 
@@ -74,6 +77,9 @@ An answer to that question.
 * First public version
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+* Renamed
 
 = 2.1.0  =
 * Hosted Domain Support
