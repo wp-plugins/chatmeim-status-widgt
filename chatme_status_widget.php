@@ -4,7 +4,7 @@ Plugin Name: ChatMe Status Widget
 Plugin URI: http://chatme.im
 Description: Displays the ChatMe User Status.
 Author: camaran 
-Version: 2.1.1
+Version: 2.1.2
 Author URI: http://chatme.im
 */
 class chatme_status_Widget extends WP_Widget {
@@ -46,9 +46,9 @@ class chatme_status_Widget extends WP_Widget {
 
 			//	Outputs the image
 			if ($hosted == "1") { 
-				echo '  <li>'. $title .' <img src="http://api.webchat.domains/status/'.$title.'" alt="ChatMe Status" /></li>';
+				echo '  <li>'. $title .' <img src="http://webchat.domains/status/'.$title.'" alt="ChatMe Status" /></li>';
 			} else {
-				echo '  <li>'. $title .' <img src="http://api.chatme.im/status/'.$title.'" alt="ChatMe Status" /></li>'; 
+				echo '  <li>'. $title .' <img src="http://webchat.chatme.im/status/'.$title.'" alt="ChatMe Status" /></li>'; 
 				}
 		
 		echo '</ul>';
