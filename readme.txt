@@ -3,8 +3,8 @@ Contributors: camaran
 Donate link: http://www.chatme.im
 Tags: chat, jabber, jappix, mini, xmpp, status, widget, chatme
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 2.1.2
+Tested up to: 4.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,10 @@ An answer to that question.
 
 == Changelog ==
 
+= 2.1.3 =
+* 4.2 tested
+* fix Notice:  attribute_escape is deprecated since version 2.8!
+
 = 2.1.2 =
 * New api url
 
@@ -80,6 +84,10 @@ An answer to that question.
 * First public version
 
 == Upgrade Notice ==
+
+= 2.1.3 =
+* 4.2 tested
+* fix Notice:  attribute_escape is deprecated since version 2.8!
 
 = 2.1.2 =
 * New api url
