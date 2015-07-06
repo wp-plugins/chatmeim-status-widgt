@@ -4,7 +4,7 @@ Plugin Name: ChatMe Status Widget
 Plugin URI: http://chatme.im
 Description: Displays the ChatMe User Status.
 Author: camaran 
-Version: 2.1.4
+Version: 2.2.0
 Author URI: http://chatme.im
 */
 class chatme_status_Widget extends WP_Widget {
@@ -12,7 +12,7 @@ class chatme_status_Widget extends WP_Widget {
 	//
 	//	Constructor
 	//
-	function chatme_status_Widget() {
+	function __construct() {
 
 		//	'widget_chatme_status' is the CSS class name assigned to the widget
 		//	'description' is the widget description that appears in the 'Available Widgets' list in the backend
@@ -20,7 +20,7 @@ class chatme_status_Widget extends WP_Widget {
 		
 		//	'status-picture-widget', this will be the ID (random-picture-widget-1, random-picture-widget-2, etc)
 		//	__('ChatMe Status Picture') is the title of the widget in the backend
-		$this->WP_Widget('status-picture-widget', __('ChatMe Status Picture'), $widget_ops);
+		parent::__construct('status-picture-widget', __('ChatMe Status Picture'), $widget_ops);
 		
 	}
 	

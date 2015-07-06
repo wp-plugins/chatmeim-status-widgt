@@ -3,8 +3,8 @@ Contributors: camaran
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S9LJAJ7B584GL
 Tags: chat, jabber, jappix, mini, xmpp, status, widget, chatme
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 2.1.4
+Tested up to: 4.3
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ An answer to that question.
 
 == Changelog ==
 
+= 2.2.0 =
+* New Wordpress Api
+
 = 2.1.3 =
 * 4.2 tested
 * fix Notice:  attribute_escape is deprecated since version 2.8!
@@ -84,6 +87,9 @@ An answer to that question.
 * First public version
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+* New Wordpress Api
 
 = 2.1.3 =
 * 4.2 tested
