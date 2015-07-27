@@ -6,6 +6,8 @@ Description: Displays the ChatMe User Status.
 Author: camaran 
 Version: 2.2.0
 Author URI: http://chatme.im
+Text Domain: chatmeim-status-widgt
+Domain Path: /languages/
 */
 class chatme_status_Widget extends WP_Widget {
 
@@ -16,11 +18,11 @@ class chatme_status_Widget extends WP_Widget {
 
 		//	'widget_chatme_status' is the CSS class name assigned to the widget
 		//	'description' is the widget description that appears in the 'Available Widgets' list in the backend
-		$widget_ops = array('classname' => 'widget_chatme_status', 'description' => __('Display the ChatMe User Status') );
+		$widget_ops = array('classname' => 'widget_chatme_status', 'description' => __('Display the ChatMe User Status', 'chatmeim-status-widgt') );
 		
 		//	'status-picture-widget', this will be the ID (random-picture-widget-1, random-picture-widget-2, etc)
-		//	__('ChatMe Status Picture') is the title of the widget in the backend
-		parent::__construct('status-picture-widget', __('ChatMe Status Picture'), $widget_ops);
+		//	__('ChatMe Status Picture', 'chatmeim-status-widgt') is the title of the widget in the backend
+		parent::__construct('status-picture-widget', __('ChatMe Status Picture', 'chatmeim-status-widgt'), $widget_ops);
 		
 	}
 	
@@ -38,7 +40,7 @@ class chatme_status_Widget extends WP_Widget {
 		//	Outputs the widget in its standard ul li format.
 		echo $before_widget;
 		if (!empty( $title )) { 
-			echo $before_title . 'ChatMe Status' . $after_title; 
+			echo $before_title . __('ChatMe Status', 'chatmeim-status-widgt') . $after_title; 
 		};
 		echo '<ul style="list-style:none;margin-left:0px;">';
 		
@@ -79,8 +81,8 @@ class chatme_status_Widget extends WP_Widget {
 		$title = strip_tags($instance['title']);
 		$hosted = strip_tags($instance['hosted']);
 		?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('ChatMe Username with domain'); ?>: <input placeholder="<?php echo __('user@host'); ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="email" value="<?php echo esc_attr($title); ?>" /></label></p>
-			<p><label for="<?php echo $this->get_field_id('hosted'); ?>"><?php echo __('Hosted Domain?'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('hosted'); ?>" name="<?php echo $this->get_field_name('hosted'); ?>" type="checkbox" <?php if ($hosted == "1") { echo 'checked=""'; }?> value="1" /></label></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('ChatMe Username with domain', 'chatmeim-status-widgt'); ?>: <input placeholder="<?php echo __('user@host', 'chatmeim-status-widgt'); ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="email" value="<?php echo esc_attr($title); ?>" /></label></p>
+			<p><label for="<?php echo $this->get_field_id('hosted'); ?>"><?php echo __('Hosted Domain?', 'chatmeim-status-widgt'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('hosted'); ?>" name="<?php echo $this->get_field_name('hosted'); ?>" type="checkbox" <?php if ($hosted == "1") { echo 'checked=""'; }?> value="1" /></label></p>
 		<?php
 		
 	}
