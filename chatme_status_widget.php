@@ -4,7 +4,7 @@ Plugin Name: ChatMe Status Widget
 Plugin URI: http://chatme.im
 Description: Displays the ChatMe User Status.
 Author: camaran 
-Version: 2.2.0
+Version: 2.2.1
 Author URI: http://chatme.im
 Text Domain: chatmeim-status-widgt
 Domain Path: /languages/
