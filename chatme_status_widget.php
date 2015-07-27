@@ -11,42 +11,26 @@ Domain Path: /languages/
 */
 class chatme_status_Widget extends WP_Widget {
 
-	//
-	//	Constructor
-	//
 	function __construct() {
 
-		//	'widget_chatme_status' is the CSS class name assigned to the widget
-		//	'description' is the widget description that appears in the 'Available Widgets' list in the backend
 		$widget_ops = array('classname' => 'widget_chatme_status', 'description' => __('Display the ChatMe User Status', 'chatmeim-status-widgt') );
-		
-		//	'status-picture-widget', this will be the ID (random-picture-widget-1, random-picture-widget-2, etc)
-		//	__('ChatMe Status Picture', 'chatmeim-status-widgt') is the title of the widget in the backend
 		parent::__construct('status-picture-widget', __('ChatMe Status Picture', 'chatmeim-status-widgt'), $widget_ops);
 		
 	}
 	
-	//
-	//	widget() - outputs the content of the widget, in our case: a random picture. 
-	//
 	function widget($args,$instance) {
 	
 		extract($args);
 
-		//	Get the title of the widget and the specified width of the image
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$hosted = empty($instance['hosted']) ? ' ' : apply_filters('widget_hosted', $instance['hosted']);
 			
-		//	Outputs the widget in its standard ul li format.
 		echo $before_widget;
 		if (!empty( $title )) { 
 			echo $before_title . __('ChatMe Status', 'chatmeim-status-widgt') . $after_title; 
 		};
 		echo '<ul style="list-style:none;margin-left:0px;">';
 		
-		//	Let's display the image(s)
-
-			//	Outputs the image
 			if ($hosted == "1") { 
 				echo '  <li>'. $title .' <img src="http://webchat.domains/status/'.$title.'" alt="ChatMe Status" /></li>';
 			} else {
@@ -55,12 +39,9 @@ class chatme_status_Widget extends WP_Widget {
 		
 		echo '</ul>';
 		echo $after_widget;
-		//	Done
+
 	}
 	
-	//
-	//	update() - processes widget options to be saved.
-	//
 	function update($new_instance, $old_instance) {
 		
 		$instance = $old_instance;
@@ -71,12 +52,8 @@ class chatme_status_Widget extends WP_Widget {
 		
 	}
 	
-	//
-	//	form() - outputs the options form on admin in Appearance => Widgets (backend). 
-	//
 	function form($instance) {
 
-		//	Assigns values
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'hosted' => '0' ) );
 		$title = strip_tags($instance['title']);
 		$hosted = strip_tags($instance['hosted']);
@@ -89,9 +66,12 @@ class chatme_status_Widget extends WP_Widget {
 
 }
 
-//
-//	Register the chatme_status_Widget widget class
-//
+	function languages() {
+      		$plugin_dir = basename(dirname(__FILE__));
+      		load_plugin_textdomain( 'chatmeim-status-widgt', null, $plugin_dir . '/languages/' );
+	}
+
 add_action('widgets_init', create_function('', 'return register_widget("chatme_status_Widget");'));
+add_action( 'init', 'languages' );
 
 ?>
